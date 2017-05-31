@@ -41,6 +41,11 @@ exclude:
   - _pages/README.md
   - _files/README.md
 
+picture_generator:
+    extension: ".jpg"
+    source: "_images"
+    cache: "_images/.cache"
+
 compress_html:
     clippings: all
     comments: ["<!-- ", " -->"]
