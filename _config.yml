@@ -12,7 +12,7 @@ author:
     email: "frank@steilerphoto.de"
     uri: "https://steilerphoto.de/about"
 
-excerpt_separator: <!-- more -->
+excerpt_separator: <!--more-->
 
 ## Permalink for blog posts
 permalink: /:year/:month/:title/

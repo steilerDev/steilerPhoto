@@ -32,7 +32,36 @@ main () {
 }
 
 create_post () {
-    echo "Creating post"
+    echo "Creating new blog post skeleton for steilerPhoto blog!"
+    echo
+    echo "Please input your blog post's title:"
+    read title
+    FILENAME="$(date +%Y-%m-%d)-$(echo -n "${title}" | sed -e 's/[^[:alnum:]]/_/g' | tr -s '_' | tr A-Z a-z)"
+    echo "Using the following file/path name:"
+    read -e -i "$FILENAME" -p "Please adjust if necessary: " FILENAME
+    
+    IMAGE_PATH="_images/$FILENAME"
+    POST_PATH="_posts/${FILENAME}.md"
+
+    (
+        cd $ROOT_DIR 
+        mkdir $IMAGE_PATH && echo "Created '$IMAGE_PATH' in '$(pwd)'"
+        > $POST_PATH
+        echo "---" >> $POST_PATH
+        echo "title: \"${title}\"" >> $POST_PATH
+        echo "layout: posts" >> $POST_PATH
+        echo "---" >> $POST_PATH
+        echo >> $POST_PATH
+        echo "Put your excerpt here" >> $POST_PATH
+        echo >> $POST_PATH
+        echo "<!--more-->" >> $POST_PATH
+        echo >> $POST_PATH
+        echo "Put the rest of your article here" >> $POST_PATH
+        echo "Created '$POST_PATH' in '$(pwd)'"
+    )
+
+    echo
+    echo "All prepared! Put your images into '$IMAGE_PATH' using 'XX-Your_Image_Title.jpg' and modify your blog post in '$POST_PATH'"
 }
 
 help () {
