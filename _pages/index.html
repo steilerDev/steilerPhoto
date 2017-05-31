@@ -1,0 +1,64 @@
+---
+layout: default
+title: Home
+permalink: /
+paginate:
+    per_page: 10
+    permalink: "/index/:num/"
+---
+
+<picture>
+    <source srcset="{% asset_path index_header_full.jpg %}" media="(min-width: 1100px)">
+    <source srcset="{% asset_path index_header_med.jpg %}" media="(min-width: 700px)">
+    <img id='indexPic' class='img-responsive' srcset="{% asset_path index_header_min.jpg %}">
+</picture>
+
+<div class="container">
+
+    <!-- This loops through the paginated posts -->
+    {% for post in paginator.posts %}
+        <div class="container">
+            <div class="post">
+                <a href="{{ post.url }}" class="hoverEffect"><span></span></a>
+                <div class='col-sm-8 desc-container'>
+                    <h1>{{ post.title }}</h1>
+                    <h6>Posted at: {{ post.date | date_to_long_string }}</h6>
+                    <article>
+                        {{ post.excerpt }}
+                        <div class="read-more">
+                            <a href="{{ post.url }}">Continue reading &gt;</a>
+                        </div>
+                    </article>
+                </div>
+                <div class='col-sm-4 img-container'>
+                    <img class="img-responsive center-block" src="{{ post.url }}preview.jpg" alt="{{ post.title }}">
+                </div>
+            </div>
+        </div>
+        <hr>
+    {% endfor %}
+
+    <!-- Pagination links -->
+    {% if paginator.total_pages > 1 %}  
+        <div class="container pagination">
+            {% if paginator.previous_page %}  
+                <a href="{{ paginator.previous_page_path }}">&laquo; Prev</a>  
+            {% endif %}  
+
+            {% for pages in (1..paginator.total_pages) %}  
+                {% if pages == paginator.page %}  
+                    <strong>{{ pages }}</strong>  
+                {% elsif pages == 1 %}  
+                    <a href="/">{{ pages }}</a>  
+                {% else %}  
+                    <a href="{{ page.paginate.permalink | replace: ':num', pages }}">{{ pages }}</a>  
+                {% endif %}  
+            {% endfor %}  
+
+            {% if paginator.next_page %}  
+                <a href="{{ paginator.next_page_path }}">Next &raquo;</a>  
+            {% endif %} 
+        </div>  
+    {% endif %} 
+</div>
+    

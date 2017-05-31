@@ -1,0 +1,29 @@
+# General information about myself, that will parsed into the layout
+frank:
+    name: 'Frank Steiler'
+    age: 22
+    profession: 'Student Services Computing'
+    contact: 
+        photo:
+            email: 'frank@steilerPhoto.de'
+            email_desc: 'frank@steilerPhoto.de'
+        dev:
+            email: 'frank@steilerDev.de'
+            email_desc: 'frank@steilerDev.de'
+
+    facebook: 'http://www.facebook.com/SteilerPhoto'
+    twitter: 'http://twitter.com/steilerPhoto'
+    linkedin: 'http://linkedin.com/in/FrankSteiler'
+    github: 'http://github.com/steilerDev'
+    rss: 'https://steilerphoto.de/feed.xml'
+
+hostmaster:
+    contact:
+        email: 'hostmaster@steilergroup.net'
+        email_desc: 'hostmaster@steilergroup.net'
+
+tammo:
+    name: 'Tammo Schwindt'
+    github: 'https://github/tammon'
+    contact:
+        email: 'dev@tammon.de'

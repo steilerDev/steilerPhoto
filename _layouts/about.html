@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<div class="container">
+    <div class="container">
+        <p></p>
+        <div class="col-md-4">
+            <img class="img-responsive center-block" src="{% asset_path about.jpg %}"></img>
+            <p></p>
+        </div>
+        <div class="col-md-8">
+            <p><b>Name: </b>{{ site.data.about.frank.name }}</p>
+            <p><b>Age: </b>{{ site.data.about.frank.age }}</p>
+            <p><b>Profession: </b>{{ site.data.about.frank.profession }}</p>
+            <p><b>Contact: </b><a href="mailto:{{ site.data.about.frank.contact.photo.email_desc }}">{{ site.data.about.frank.contact.photo.email }}</a></p>
+            <p></p>
+            {{ content }}
+        </div>
+    </div>
+    <hr>
+</div>

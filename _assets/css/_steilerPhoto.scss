@@ -1,0 +1,228 @@
+
+html {
+  font-family: "Roboto", Helvetica, sans-serif;
+  font-weight: 100;
+}
+
+/* Body starts underneath the fixed navbar */
+body{
+	margin-top:51px;
+}
+
+/* Cover picture starts at the top of the page behind navbar */
+#indexPic {
+	margin-top:-51px;
+}
+
+/* Brand name in navbar */
+#logo {
+	font-family: "Raleway";
+	font-size:175%;
+	opacity: 0.5;
+}
+
+/* Transparent navbar */
+.navbar {
+	margin:0px;
+	opacity:0.8;
+}
+
+.navbar-right {
+	padding: 9.5px 0;
+}
+
+/* Padding for pictures in navbar (desktop view) */
+.navbar-right > li > a {
+	padding: 9px;
+}
+
+/* Center fotorama in container */
+.fotorama__wrap {
+	margin: auto;
+}
+
+.fotorama__caption {
+	text-align: left;
+    	/* Gradient colored info background. */
+    	color: #fff;
+	background: -moz-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(45,45,45,1) 35%, rgba(128,128,128,0.25) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,1)), color-stop(35%,rgba(45,45,45,1)), color-stop(100%,rgba(128,128,128,0.25))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, rgba(0,0,0,1) 0%,rgba(45,45,45,1) 35%,rgba(128,128,128,0.25) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, rgba(0,0,0,1) 0%,rgba(45,45,45,1) 35%,rgba(128,128,128,0.25) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, rgba(0,0,0,1) 0%,rgba(45,45,45,1) 35%,rgba(128,128,128,0.25) 100%); /* IE10+ */
+	background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(45,45,45,1) 35%,rgba(128,128,128,0.25) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#40808080',GradientType=1 ); /* IE6-9 */
+}
+
+.fotorama__caption__wrap {
+    background: none;
+}
+
+/* Caption headline properties */
+.fotorama__caption__wrap h2 {
+    font-size: 130%;
+}
+
+/* Caption subline properties */
+.fotorama__caption__wrap p {
+    margin: 0 0 .25em;
+    font-family:Roboto Light;
+    font-size: 12px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Hide caption of fotorama on small devices */
+@media (max-width: 767px) {
+  .fotorama__caption {
+  	background: rgba(0,0,0,0);
+  }
+  .fotorama__caption {
+  	display: none !important;
+  }
+
+  .navbar-fixed-top, .navbar-fixed-bottom {
+    	position: static;
+  }
+  
+  body{
+        margin-top:0px;
+  }
+
+  #indexPic {
+        margin-top:0px;
+  }
+}
+
+/* Hide headline on small medium devices */
+@media (min-width: 768px) and (max-width: 991px) {
+  .fotorama__caption__wrap h2 {
+  	display: none !important;
+  }
+}
+
+/* changing padding of the right navbar in mobile design in order to align the nav items */
+@media all and (max-width: 768px){
+    .navbar-right > li > a {
+        padding: 10px 15px;
+    }
+}
+
+/* ------ Grayscale and color at hover BUT hover just for non smartphones ------ */
+/* people with horrible phablets should be okay... gez. tammon */
+.img-container {
+	position: relative;
+	filter: url(asset_path('filter.svg#grayscale')); /* Firefox 3.5+ */
+	filter: gray; /* IE6-9 */
+	-webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+	-webkit-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+@media all and (min-width: 767px) {
+	/* Hover effect for preview pictures */
+	.hoverEffect:hover ~ .img-container {
+		filter: none;
+		-webkit-filter: grayscale(0);
+	}
+}
+/* ------ END Grayscale and color at hover BUT hover just for non smartphones ------ */
+
+
+/* ------ Hover for whole post container ------ */
+/* currently not available for IE 7/8 */
+/* Well, fuck it... who cares!? gez. tammon */
+
+/* required to layout the span correctly with absolute position */
+.container {
+	position: relative;
+}
+
+/* layouts the span within the a tag container to have the whole size of the post */
+.hoverEffect > span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+/* makes the read more link available */
+.read-more > a {
+	position: relative;
+	z-index: 2;
+}
+
+/* no underlining when hovering over a link in a post container */
+.hoverEffect a:hover {
+	text-decoration: none;
+}
+
+/* ------ END hover for whole container ------ */
+
+
+/* ------ Menu items with fancy underlining at hover ------ */
+/* tammon */
+
+.menu-item > a::after {
+	display: block;
+	content: '';
+	position: relative;
+	top: 0;
+	left: 0;
+	margin: 0 auto;
+	width: 0%;
+	height: 1px;
+	-webkit-transition: width .3s ease;
+	transition: width .3s ease;
+	background-color: #777;
+}
+
+.menu-item a:hover::after {
+	width: 100%;
+}
+
+.menu-item {
+	-webkit-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+.menu-item:hover {
+	background-color: #e7e7e7;
+}
+
+.active-menu-item a::after {
+	width: 100%;
+}
+
+/* don't show underline from middle but lefft */
+@media (max-width: 767px) {
+	.menu-item > a::after {
+		margin: 0;
+	}
+}
+
+/* ------ END Menu items with fancy underlining at hover ------ */
+
+.pagination {
+    text-align: center;
+    font-size: 120%;
+}
+
+.page-navigation {
+  font-size: 120%;
+  display: block;
+  width: auto;
+  overflow: hidden;
+}
+
+.page-navigation a {
+  display: block;
+  width: 50%;
+  float: left;
+  margin: 1em 0;
+}
+
+.page-navigation .next {
+  text-align: right;
+}

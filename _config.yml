@@ -1,0 +1,68 @@
+# General
+title: steilerPhoto
+
+# RSS stuff
+description: "A photo blog of a ambitious, young computer scientist."
+url: "https://steilerPhoto.de"
+author: 
+    name: "Frank Steiler"
+    email: "frank@steilerphoto.de"
+    uri: "https://steilerphoto.de/about"
+
+excerpt_separator: <!-- more -->
+
+## Permalink for blog posts
+permalink: /:year/:month/:title/
+
+# Local server settings
+host: 0.0.0.0
+
+# Build settings
+markdown: kramdown
+incremental: true
+gems:
+  - jekyll-feed
+  - jekyll-assets
+  - jekyll-sitemap
+  - jekyll-last-modified-at
+  - octopress-paginate
+
+include: 
+  - _pages
+  - _files
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - _posts/README.md
+  - _pages/README.md
+  - _files/README.md
+
+#
+# jekyll-assets config
+# 
+
+assets:
+    compress:
+        css: true
+        js: true
+
+    autowrite: true
+    cache_type: memory
+
+    prefix: "/assets"
+    digest: true
+    
+    sources: 
+        - _assets/favicon
+
+    assets:
+        # Copy all files withtin the _assets folder structure to the /assets/ folder and give them a digest
+        - "*"
+
+    features:
+        liquid: false
+        automatic_img_size: false
+        automatic_img_alt: false

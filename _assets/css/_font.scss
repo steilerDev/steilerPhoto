@@ -1,0 +1,27 @@
+/*
+ * Embedded web font for the blog.
+ */
+
+@font-face {
+  font-family: 'Roboto Light';
+  src: url(asset_path('Roboto.eot')); /* IE9 Compat Modes */
+  src: url(asset_path('Roboto.eot?#iefix')) format('embedded-opentype'), /* IE6-IE8 */
+       url(asset_path('Roboto.woff')) format('woff'), /* Modern Browsers */
+       url(asset_path('Roboto.ttf'))  format('truetype'), /* Safari, Android, iOS */
+       url(asset_path('Roboto.svg#14cfc794995ce651ee6fc06de48ff027')) format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  200;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url(asset_path('Raleway.eot')); /* IE9 Compat Modes */
+  src: url(asset_path('Raleway.eot?#iefix')) format('embedded-opentype'), /* IE6-IE8 */
+       url(asset_path('Raleway.woff')) format('woff'), /* Modern Browsers */
+       url(asset_path('Raleway.ttf'))  format('truetype'), /* Safari, Android, iOS */
+       url(asset_path('Raleway.svg#9d88af5bcbe5cc0ab85ffc4f0a7265cc')) format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  200;
+}

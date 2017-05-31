@@ -1,0 +1,430 @@
+.social-button-text {
+    display: none
+}
+
+.social-button-btn {
+    display: inline-block;
+    margin: 0 5px 5px 0;
+    vertical-align: middle;
+    padding: 10px 20px 12px;
+    border: 1px solid #272727 !important
+}
+
+.social-button-btn-menu {
+    display: inline-block;
+    margin: 0 5px 0 0;
+    vertical-align: middle;
+    padding: 6px 16px 8px;
+    border: 1px solid #272727 !important;
+	opacity: 0.5;
+}
+
+.social-button-share-text {
+    margin: 0 0 5px;
+    font-size: 19px;
+    color: #272727;
+    line-height: 1.5em
+}
+
+.social-button-container {
+    margin-bottom: 10px
+}
+
+.social-button-container-menu {
+	margin-bottom: 0
+}
+
+.social-button-container a {
+    webkit-transition: color .3s ease, background-color .3s ease, border-color .3s ease, box-shadow .3s ease;
+    transition: color .3s ease, background-color .3s ease, border-color .3s ease, box-shadow .3s ease
+}
+
+.social-button-rss {
+    background-color: #fff;
+    border-bottom: 5px solid #272727
+}
+
+.social-button-rss:before {
+    content: '';
+    background: url(asset_path('social_media_button-black.png')) no-repeat;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-rss:hover {
+    color: #FFF;
+    background-color: #272727;
+    border-bottom: 5px solid #fff
+}
+
+.social-button-rss:hover:before {
+    background: url(asset_path('social_media_button-white.png')) no-repeat;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-email {
+    background-color: #fff;
+    border-bottom: 5px solid #272727
+}
+
+.social-button-email:before {
+    content: '';
+    background: url(asset_path('social_media_button-black.png')) no-repeat -360px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-email:hover {
+    color: #FFF;
+    background-color: #272727;
+    border-bottom: 5px solid #fff
+}
+
+.social-button-email:hover:before {
+    background: url(asset_path('social_media_button-white.png')) no-repeat -360px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-facebook {
+    background-color: #fff;
+    border-bottom: 5px solid #272727
+}
+
+.social-button-facebook:before {
+    content: '';
+    background: url(asset_path('social_media_button-black.png')) no-repeat -30px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-facebook:hover {
+    color: #FFF;
+    background-color: #272727;
+    border-bottom: 5px solid #fff
+}
+
+.social-button-facebook:hover:before {
+    background: url(asset_path('social_media_button-white.png')) no-repeat -30px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-flattr {
+    background-color: #fff;
+    border-bottom: 5px solid #272727
+}
+
+.social-button-flattr:before {
+    content: '';
+    background: url(asset_path('social_media_button-black.png')) no-repeat -60px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-flattr:hover {
+    color: #FFF;
+    background-color: #272727;
+    border-bottom: 5px solid #fff
+}
+
+.social-button-flattr:hover:before {
+    background: url(asset_path('social_media_button-white.png')) no-repeat -60px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-google {
+    background-color: #fff;
+    border-bottom: 5px solid #272727
+}
+
+.social-button-google:before {
+    content: '';
+    background: url(asset_path('social_media_button-black.png')) no-repeat -90px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-google:hover {
+    color: #FFF;
+    background-color: #272727;
+    border-bottom: 5px solid #fff
+}
+
+.social-button-google:hover:before {
+    background: url(asset_path('social_media_button-white.png')) no-repeat -90px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-linkedin {
+    background-color: #fff;
+    border-bottom: 5px solid #272727
+}
+
+.social-button-linkedin:before {
+    content: '';
+    background: url(asset_path('social_media_button-black.png')) no-repeat -120px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-linkedin:hover {
+    color: #FFF;
+    background-color: #272727;
+    border-bottom: 5px solid #fff
+}
+
+.social-button-linkedin:hover:before {
+    background: url(asset_path('social_media_button-white.png')) no-repeat -120px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-pinterest {
+    background-color: #fff;
+    border-bottom: 5px solid #272727
+}
+
+.social-button-pinterest:before {
+    content: '';
+    background: url(asset_path('social_media_button-black.png')) no-repeat -150px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-pinterest:hover {
+    color: #FFF;
+    background-color: #272727;
+    border-bottom: 5px solid #fff
+}
+
+.social-button-pinterest:hover:before {
+    background: url(asset_path('social_media_button-white.png')) no-repeat -150px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-github {
+    background-color: #fff;
+    border-bottom: 5px solid #272727
+}
+
+.social-button-github:before {
+    content: '';
+    background: url(asset_path('social_media_button-black.png')) no-repeat -390px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-github:hover {
+    color: #FFF;
+    background-color: #272727;
+    border-bottom: 5px solid #fff
+}
+
+.social-button-github:hover:before {
+    background: url(asset_path('social_media_button-white.png')) no-repeat -390px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-reddit {
+    background-color: #fff;
+    border-bottom: 5px solid #272727
+}
+
+.social-button-reddit:before {
+    content: '';
+    background: url(asset_path('social_media_button-black.png')) no-repeat -180px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-reddit:hover {
+    color: #FFF;
+    background-color: #272727;
+    border-bottom: 5px solid #fff
+}
+
+.social-button-reddit:hover:before {
+    background: url(asset_path('social_media_button-white.png')) no-repeat -180px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-stumbleupon {
+    background-color: #fff;
+    border-bottom: 5px solid #272727
+}
+
+.social-button-stumbleupon:before {
+    content: '';
+    background: url(asset_path('social_media_button-black.png')) no-repeat -210px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-stumbleupon:hover {
+    color: #FFF;
+    background-color: #272727;
+    border-bottom: 5px solid #fff
+}
+
+.social-button-stumbleupon:hover:before {
+    background: url(asset_path('social_media_button-white.png')) no-repeat -210px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-tumblr {
+    background-color: #fff;
+    border-bottom: 5px solid #272727
+}
+
+.social-button-tumblr:before {
+    content: '';
+    background: url(asset_path('social_media_button-black.png')) no-repeat -240px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-tumblr:hover {
+    color: #FFF;
+    background-color: #272727;
+    border-bottom: 5px solid #fff
+}
+
+.social-button-tumblr:hover:before {
+    background: url(asset_path('social_media_button-white.png')) no-repeat -240px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-twitter {
+    background-color: #fff;
+    border-bottom: 5px solid #272727
+}
+
+.social-button-twitter:before {
+    content: '';
+    background: url(asset_path('social_media_button-black.png')) no-repeat -270px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-twitter:hover {
+    color: #FFF;
+    background-color: #272727;
+    border-bottom: 5px solid #fff
+}
+
+.social-button-twitter:hover:before {
+    background: url(asset_path('social_media_button-white.png')) no-repeat -270px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-vk {
+    background-color: #fff;
+    border-bottom: 5px solid #272727
+}
+
+.social-button-vk:before {
+    content: '';
+    background: url(asset_path('social_media_button-black.png')) no-repeat -300px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}
+
+.social-button-vk:hover {
+    color: #FFF;
+    background-color: #272727;
+    border-bottom: 5px solid #fff
+}
+
+.social-button-vk:hover:before {
+    background: url(asset_path('social_media_button-white.png')) no-repeat -300px 0;
+    background-size: 420px 30px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: -6px -15px -8px
+}

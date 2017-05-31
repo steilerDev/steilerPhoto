@@ -1,0 +1,5 @@
+---
+permalink: /robots.txt
+---
+
+Sitemap: http://www.steilerphoto.de/sitemap.xml

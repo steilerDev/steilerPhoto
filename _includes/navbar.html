@@ -1,0 +1,48 @@
+<div class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin:0">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="{% link _pages/index.html %}" class="navbar-brand" id="logo">steilerPhoto</a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <!-- navigation section with sHTML5 Tag -->
+        <nav class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
+                <li class="menu-item {% if page.title == 'Home' %} active-menu-item {% endif %}">
+                    <a href="{% link _pages/index.html %}">Home</a>
+                </li>
+                <li class="menu-item {% if page.title  == 'About' %} active-menu-item {% endif %}">
+                    <a href="{% link _pages/about.md %}">About</a>
+                </li>
+                <li class="menu-item {% if page.title == 'Archive' %} active-menu-item {% endif %}">
+                    <a href="{% link _pages/archive.html %}">Archive</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li> 
+                    <div class="social-button-container center-block text-center social-button-container-menu">
+                        <a href="{{site.data.about.frank.facebook}}" target="_blank" class="social-button-btn-menu social-button-facebook">
+                            <span class="social-button-text">Facebook</span>
+                        </a>
+                        <a href="{{ site.data.about.frank.twitter }}" target="_blank" class="social-button-btn-menu social-button-twitter">
+                            <span class="social-button-text">Twitter</span>
+                        </a>
+                        <a href="{{ site.data.about.frank.linkedin }}" target="_blank" class="social-button-btn-menu social-button-linkedin">
+                            <span class="social-button-text">LinkedIn</span>
+                        </a>
+                        <a href="{{ site.data.about.frank.github }} " target="_blank" class="social-button-btn-menu social-button-github">
+                            <span class="social-button-text">GitHub</span>
+                        </a>
+                        <a href="{{ site.data.about.frank.rss }}" target="_blank" class="social-button-btn-menu social-button-rss">
+                            <span class="social-button-text">RSS Feed</span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>    		

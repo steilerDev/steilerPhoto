@@ -1,0 +1,80 @@
+---
+layout: default
+---
+<div class="container">
+    <div class='post' itemscope itemtype="http://schema.org/BlogPosting">
+        <h1 itemprop="headline">{{ page.title }}</h1>
+            <h6>Posted at: <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_long_string }}</time></h6>
+        <br/>
+        <span itemprop="articleBody">
+            <article>
+                {{ content }}
+            </article>
+        </span>
+        <hr>
+        <div property="associatedMedia" class="row center-block text-center">
+            {% if page.pictures.size > 0 %}
+                {% if page.pictures.size > 1 %}
+                    <div typeof="ImageObject" class="fotorama" data-width="100%" data-ratio="3/2" data-max-width="1024" data-nav="thumbs" data-allowfullscreen="native" data-hash="true" data-loop="true">
+                {% else %}
+                    <div typeof="ImageObject" class="fotorama" data-width="100%" data-max-width="1024" data-nav="false" data-allowfullscreen="native" data-hash="true"> 
+                {% endif %} 
+                
+                {% for picture in page.pictures %}
+                    <img src="{{ picture.filename }}.jpg" 
+                         data-full="{{ picture.filename }}_full.jpg" 
+                         data-thumb="{{ picture.filename }}_thumb.jpg" 
+                         data-caption="
+                            <h2>{{ picture.title }}</h2>
+                            <p>
+                                {{ picture.camera }} -
+                                ISO {{ picture.iso }} -
+                                Focal length {{ picture.focal-length }} -
+                                Aperture {{ picture.aperture }} -
+                                Exposure {{ picture.exposure }}
+                            </p>
+                         ">            
+                {% endfor %}
+                 </div>
+            {% endif %}
+        </div>
+        <div class="page-navigation">  
+            {% if page.previous.url %}  
+                <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>  
+            {% else %}
+                <a class="prev"></>
+            {% endif %}  
+            {% if page.next.url %}  
+                <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>  
+            {% else %}
+                <a class="next"></>
+            {% endif %}  
+        </div>  
+        <hr>
+        
+        <div class="row center-block text-center">
+            <div class="social-button-container">
+                <span class="social-button-share-text">Share this post:</span>
+                <br>
+                <a href="http://www.facebook.com/sharer.php?u={{ site.data.global.url }}{{ page.url }}" target="_blank" class="social-button-btn social-button-facebook">
+                    <span class="social-button-text">Facebook</span>
+                </a>			
+                <a href="https://plus.google.com/share?url=i{{ site.data.global.url }}{{ page.url }}" target="_blank" class="social-button-btn social-button-google">
+                    <span class="social-button-text">Google+</span>
+                </a>
+                <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=i{{ site.data.global.url }}{{ page.url }}" target="_blank" class="social-button-btn social-button-linkedin">
+                    <span class="social-button-text">Linkedin</span>
+                </a>
+                <a href="http://www.reddit.com/submit?url={{ site.data.global.url }}{{ page.url }}" target="_blank" class="social-button-btn social-button-reddit">
+                    <span class="social-button-text">Twitter</span>
+                </a>
+                <a href="http://twitter.com/share?url={{ site.data.global.url }}{{ page.url }}&amp;text=Check out these pictures!&amp;hashtags=photography" target="_blank" class="social-button-btn social-button-twitter">
+                    <span class="social-button-text">Twitter</span>
+                </a>
+                <a href="mailto:?Subject=Blog post '{{ page.title }}' on steilerPhoto.de&amp;Body=Check out these pictures: {{ site.data.global.url }}{{ page.url }}" target="_blank" class="social-button-btn social-button-email">
+                    <span class="social-button-text">Email</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
