@@ -32,7 +32,7 @@ include:
   - _files
 
 exclude:
-  - steilerPhoto.sh
+  - steilerPhoto
   - Gemfile
   - Gemfile.lock
   - LICENSE

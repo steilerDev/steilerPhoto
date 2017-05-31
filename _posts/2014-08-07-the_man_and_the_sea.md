@@ -5,7 +5,7 @@ layout: posts
 
 &raquo;Worse Things Happen At Sea&laquo; - Frank Turner. 
 
-<!-- more -->
+<!--more-->
 
 Mavericks - It's obvious why Apple chose this site as the name of their first operating system after years of choosing the names of animals. The rough seaside consisting out of beautiful rocks and waves is stunning.
 

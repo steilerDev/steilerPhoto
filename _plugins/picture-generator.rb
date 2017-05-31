@@ -76,6 +76,7 @@ class PictureGenerator
             end
             Jekyll.logger.debug "Copying " << image_cache << " to " << image_dest
             FileUtils::copy(image_cache, image_dest) 
+            File.chmod(0644, image_dest)
         else
             Jekyll.logger.warn "Skipping " << ext << " for " << source << " because " << image_dest << " already exists"
         end
@@ -157,7 +158,7 @@ Jekyll::Hooks.register :posts, :post_write do |post|
             preview_cache = File.join(File.dirname(cache_base), "preview.jpg")
             PictureGenerator.cache_image(source, preview_cache, preview_dest, "") { |src, dst|
                 Jekyll.logger.debug "Creating preview"
-                %x[convert -page +20+20 #{src} -quality 70 -resize '800' -alpha set \\( +clone -background black -shadow 60x10+20+20 \\) +swap -background white -mosaic PJPEG:#{dst}]
+                %x[convert -page +20+20 #{src} -quality 70 -resize '500' -alpha set \\( +clone -background black -shadow 60x10+20+20 \\) +swap -background white -mosaic PJPEG:#{dst}]
             }
         end
         

@@ -70,7 +70,7 @@ This web site uses Piwik, an open-source software for statistical analyses of us
                         <h4 class="modal-title" id="myModalLabel">Tracking settings</h4>
                 </div>
                 <div class="modal-body">
-                    <iframe style="border: 0; height: 100%; width: 100%;" src="http://analytics.steilergroup.net/index.php?module=CustomOptOut&action=optOut&idSite=1&language=en"></iframe>
+                    <iframe style="border: 0; height: 100%; width: 100%;" src="{{ site.data.global.piwik.url }}/index.php?module=CustomOptOut&action=optOut&idSite={{ site.data.global.piwik.site-id }}&language=en"></iframe>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

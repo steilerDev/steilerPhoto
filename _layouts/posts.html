@@ -59,13 +59,13 @@ layout: default
                 <a href="http://www.facebook.com/sharer.php?u={{ site.data.global.url }}{{ page.url }}" target="_blank" class="social-button-btn social-button-facebook">
                     <span class="social-button-text">Facebook</span>
                 </a>			
-                <a href="https://plus.google.com/share?url=i{{ site.data.global.url }}{{ page.url }}" target="_blank" class="social-button-btn social-button-google">
+                <a href="https://plus.google.com/share?url={{ site.data.global.url }}{{ page.url }}" target="_blank" class="social-button-btn social-button-google">
                     <span class="social-button-text">Google+</span>
                 </a>
-                <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=i{{ site.data.global.url }}{{ page.url }}" target="_blank" class="social-button-btn social-button-linkedin">
+                <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.data.global.url }}{{ page.url }}" target="_blank" class="social-button-btn social-button-linkedin">
                     <span class="social-button-text">Linkedin</span>
                 </a>
-                <a href="http://www.reddit.com/submit?url={{ site.data.global.url }}{{ page.url }}" target="_blank" class="social-button-btn social-button-reddit">
+                <a href="http://www.reddit.com/submit?url={{ site.data.global.url | cgi_escape }}{{ page.url | cgi_escape }}" target="_blank" class="social-button-btn social-button-reddit">
                     <span class="social-button-text">Twitter</span>
                 </a>
                 <a href="http://twitter.com/share?url={{ site.data.global.url }}{{ page.url }}&amp;text=Check out these pictures!&amp;hashtags=photography" target="_blank" class="social-button-btn social-button-twitter">
