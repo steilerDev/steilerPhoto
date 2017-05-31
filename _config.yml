@@ -1,6 +1,9 @@
 # General
 title: steilerPhoto
 
+# Local server settings
+host: 0.0.0.0
+
 # RSS stuff
 description: "A photo blog of a ambitious, young computer scientist."
 url: "https://steilerPhoto.de"
@@ -13,9 +16,6 @@ excerpt_separator: <!-- more -->
 
 ## Permalink for blog posts
 permalink: /:year/:month/:title/
-
-# Local server settings
-host: 0.0.0.0
 
 # Build settings
 markdown: kramdown
@@ -32,6 +32,7 @@ include:
   - _files
 
 exclude:
+  - steilerPhoto.sh
   - Gemfile
   - Gemfile.lock
   - LICENSE
@@ -39,6 +40,21 @@ exclude:
   - _posts/README.md
   - _pages/README.md
   - _files/README.md
+
+compress_html:
+    clippings: all
+    comments: ["<!-- ", " -->"]
+    endings: all
+    blanklines: false
+    profile: false
+    startings: [html, head, body]
+
+#
+# Deploy settings
+#
+
+deploy:
+- rsync -az --delete ./ FrankSteiler@steilerphoto.de:/var/www/steilerPhoto/
 
 #
 # jekyll-assets config

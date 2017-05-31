@@ -1,0 +1,58 @@
+#!/bin/bash
+
+ROOT_DIR=/home/FrankSteiler/steilerPhoto/
+
+PROD_CONF="--config=_config.yml"
+DEV_CONF="--config=_config.yml,_dev_config.yml"
+
+main () {
+    CONF="$DEV_CONF"
+
+    if [ "$2" = "prod" ] || [ "$2" = "p" ] ; then
+        CONF="$PROD_CONF"
+    fi
+
+    if [ "$1" = "build" ] || [ "$1" = "b" ]; then
+        (cd $ROOT_DIR && bundle exec jekyll build $CONF)
+    elif [ "$1" = "serve" ] || [ "$1" = "s" ] ; then
+        (cd $ROOT_DIR && bundle exec jekyll serve $CONF)
+    elif [ "$1" = "deploy" ] || [ "$1" = "d" ] ; then
+        if [ "$2" = "prod" ] || [ "$2" = "p" ] ; then
+            (cd $ROOT_DIR ; rm -r _site ; bundle exec jekyll build $PROD_CONF && bundle exec jekyll deploy $PROD_CONF)
+        else
+            (cd $ROOT_DIR ; rm -r _site ; bundle exec jekyll build $PROD_CONF && bundle exec jekyll deploy $DEV_CONF)
+        fi
+    elif [ "$1" = "create" ] || [ "$1" = "c" ] ; then
+        create_post
+        exit 0
+    else
+        help
+        exit 0
+    fi
+}
+
+create_post () {
+    echo "Creating post"
+}
+
+help () {
+    echo "Simple script to manipulate steilerPhoto blog"
+    echo
+    echo "Usage:"
+    echo "  $0 build"
+    echo "  $0 b        Build the site"
+    echo 
+    echo "  $0 server"
+    echo "  $0 s        Server the site"
+    echo  
+    echo "  $0 deploy"
+    echo "  $0 d        Deploy the site (This always deploys a production render of the page into the dev or prod environment)"
+    echo
+    echo "  $0 create"
+    echo "  $0 c        Create a new post"
+    echo
+    echo "  If the second argument is 'prod' or 'p' the production configuration will be used"
+}
+
+main $@
+exit -1

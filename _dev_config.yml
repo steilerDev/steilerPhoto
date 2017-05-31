@@ -1,0 +1,32 @@
+#
+# This config file overwrites some of the values based on the dev environment
+#
+
+# Build settings
+incremental: true
+
+compress_html:
+    clippings: []
+    comments: []
+    endings: []
+    ignore:
+        envs: []
+    blanklines: true
+    profile: false
+    startings: []
+
+#
+# Deploy settings
+#
+
+deploy:
+- rsync -az --delete ./ FrankSteiler@steilerphoto.de:/var/www/test_steilerPhoto/
+
+#
+# jekyll-assets config
+# 
+
+assets:
+    compress:
+        css: false
+        js: false

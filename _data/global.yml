@@ -1,4 +1,7 @@
-piwik-tracking: "abc"
+piwik:
+    site-id: 1
+    url: "https://analytics.steilergroup.net"
+
 url: "https://steilerphoto.de"
 
 # favicons

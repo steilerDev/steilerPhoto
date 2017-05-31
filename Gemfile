@@ -34,6 +34,8 @@ group :jekyll_plugins do
     gem "exif"
     gem "mini_magick"
     gem 'image_optimizer'
+
+    gem 'jekyll-deploy'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
