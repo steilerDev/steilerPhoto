@@ -11,6 +11,8 @@ frank:
             email: 'frank@steilerDev.de'
             email_desc: 'frank@steilerDev.de'
 
+    uri: "https://steilerphoto.de/about"
+
     facebook: 'http://www.facebook.com/SteilerPhoto'
     twitter: 'http://twitter.com/steilerPhoto'
     linkedin: 'http://linkedin.com/in/FrankSteiler'

@@ -1,0 +1,75 @@
+---
+permalink: /feed.xml
+sitemap: false
+layout: compress
+xls:
+---
+
+<?xml version="1.0" encoding="utf-8"?>
+{% if page.xsl %}
+  <?xml-stylesheet type="text/xml" href="{{ '/feed.xslt.xml' | absolute_url }}"?>
+{% endif %}
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>{{ site.data.rss.title }}</title>
+    <subtitle>{{ site.data.rss.description }}</subtitle>
+    <link href="{{ site.data.global.url }}{{ site.data.rss.feed-uri }}"
+          rel="self" 
+          type="application/atom+xml"/>
+    <link href="{{ site.data.global.url }}" 
+          rel="alternate" 
+          type="text/html"/>
+    <updated>{{ site.time | date_to_xmlschema }}</updated>
+    <author>
+        <name>{{ site.data.about.frank.name }}</name>
+        <email>{{ site.data.about.frank.contact.photo.email }}</email>
+        <uri>{{ site.data.about.frank.uri }}</uri>
+    </author>
+    <id>{{ site.data.global.url | xml_escape }}</id>
+    <category term="Photography"/>
+    <generator uri="{{ site.data.rss.generator.uri }}"
+               version="{{ site.data.rss.generator.version }}">
+        {{ site.data.rss.generator.description }}
+    </generator>
+    <icon>{{ site.data.global.url }}{% asset_path rssfeed.jpg %}</icon>
+    <logo>{{ site.data.global.url }}{% asset_path index_header_min.jpg %}</logo>
+    <rights>{{ site.data.rss.rights }}</rights>
+
+    {% for post in site.posts limit: 10 %}
+        <entry>
+            {% capture post_url %}{{ site.data.global.url }}{{ post.url }}{% endcapture %}
+            <title type="html">
+                {{ post.title | smartify | strip_html | normalize_whitespace | xml_escape }}
+            </title>
+            <link href="{{ post_url }}" 
+                  rel="alternate" 
+                  type="text/html" 
+                  title="{{ post.title | xml_escape }}" />
+            <updated>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</updated>
+            <published>{{ post.date | date_to_xmlschema }}</published>
+            <id>{{ post_url }}</id>
+            <author>
+                <name>{{ site.data.about.frank.name }}</name>
+                <email>{{ site.data.about.frank.contact.photo.email }}</email>
+                <uri>{{ site.data.about.frank.uri }}</uri>
+            </author>
+            <rights>{{ site.data.rss.rights }}</rights>
+            <category term="Photography"/>
+            <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" 
+                             url="{{ post_url }}preview.jpg" />
+            <summary type="html">
+                {{ post.excerpt | strip_html | normalize_whitespace | xml_escape }}
+            </summary>
+            <content type="html" xml:base="{{ post_url | xml_escape }}">
+                {% capture content %}
+                    {{ post.content }}
+                    <p>Check out the pictures attached to <a href="{{ post_url }}">this article</a></p>
+                    {% for picture in post.pictures %}
+                        <h2>{{ picture.title }}</h2>
+                        <img src="{{ post_url }}{{picture.filename}}.jpg">
+                    {% endfor %}
+                {% endcapture %}
+                {{ content | strip | xml_escape }}
+            </content>
+        </entry>
+    {% endfor %}
+</feed>

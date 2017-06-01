@@ -2,6 +2,7 @@ piwik:
     site-id: 1
     url: "https://analytics.steilergroup.net"
 
+# Without end-slash!
 url: "https://steilerphoto.de"
 
 # favicons

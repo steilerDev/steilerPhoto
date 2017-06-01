@@ -21,7 +21,7 @@
 <meta name="msapplication-TileImage" content="{% asset_path mstile_144x144.png %}">
 <meta name="msapplication-config" content="{% asset_path browserconfig.xml %}">
 
-{% feed_meta %}
+<link title="{{ site.data.rss.title }}" href="{{ site.data.rss.feed-uri }}" rel="alternate" type="application/atom+xml">
 
 <!-- Combined CSS -->	
 {% stylesheet main %}

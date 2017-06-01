@@ -31,7 +31,7 @@ paginate:
                     </article>
                 </div>
                 <div class='col-sm-4 img-container'>
-                    <img class="img-responsive center-block" src="{{ post.url }}preview.jpg" alt="{{ post.title }}">
+                    <img class="img-responsive center-block" src="{{ post.url }}preview.jpg" alt="{{ post.title | smartify | xml_escape}}">
                 </div>
             </div>
         </div>

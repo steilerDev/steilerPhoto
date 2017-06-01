@@ -4,15 +4,6 @@ title: steilerPhoto
 # Local server settings
 host: 0.0.0.0
 
-# RSS stuff
-description: "A photo blog of a ambitious, young computer scientist."
-url: "https://steilerPhoto.de"
-author: 
-    name: "Frank Steiler"
-    email: "frank@steilerphoto.de"
-    uri: "https://steilerphoto.de/about"
-
-excerpt_separator: <!--more-->
 
 ## Permalink for blog posts
 permalink: /:year/:month/:title/
@@ -21,7 +12,6 @@ permalink: /:year/:month/:title/
 markdown: kramdown
 incremental: true
 gems:
-  - jekyll-feed
   - jekyll-assets
   - jekyll-sitemap
   - jekyll-last-modified-at
@@ -41,6 +31,8 @@ exclude:
   - _pages/README.md
   - _files/README.md
 
+excerpt_separator: <!--more-->
+
 picture_generator:
     extension: ".jpg"
     source: "_images"
@@ -52,7 +44,8 @@ compress_html:
     endings: all
     blanklines: false
     profile: false
-    startings: [html, head, body]
+    startings: all
+#[html, head, body]
 
 #
 # Deploy settings

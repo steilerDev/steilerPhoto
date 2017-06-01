@@ -53,6 +53,15 @@ class PictureGenerator
         end
     end
 
+    # Keeping track of chached files for log purposes
+    @@skipped_files = 0
+    def self.number_of_skipped_files
+        @@skipped_files
+    end
+    def self.reset_muber_of_skipped_files
+        @@skipped_files = 0
+    end
+
     # This function handles caching of images, if a new image is created, it will be automatically optimized
     # - source: The full path ('/some/path/image.jpg')
     # - cache_base: The cache base name ('/some/cache/image')
@@ -72,7 +81,8 @@ class PictureGenerator
                 yield source, image_cache
                 PictureGenerator.optimize_image(image_cache)
             else
-                Jekyll.logger.warn "Not creating " << image_cache << " because it already exists"
+                @@skipped_files += 1
+                Jekyll.logger.debug "Not creating " << image_cache << " because it already exists"
             end
             Jekyll.logger.debug "Copying " << image_cache << " to " << image_dest
             FileUtils::copy(image_cache, image_dest) 
@@ -124,10 +134,12 @@ Jekyll::Hooks.register :posts, :pre_render do |post|
         # Get all necessary information required in the post from exif
         data = Exif::Data.new(source)
         picture["title"] = picture_title
-        if data.model.start_with?('SLT')
-            picture["camera"] = "Sony " << data.model
-        else
-            picture["camera"] = data.model
+        if data.model
+            if data.model.start_with?('SLT')
+                picture["camera"] = "Sony " << data.model
+            else
+                picture["camera"] = data.model
+            end
         end
         picture["iso"] = data.iso_speed_ratings
         picture["focal-length"] = data.focal_length
@@ -185,5 +197,9 @@ Jekyll::Hooks.register :posts, :post_write do |post|
             }
         }
     }
+    if PictureGenerator.number_of_skipped_files > 0 
+        Jekyll.logger.warn "Not creating #{PictureGenerator.number_of_skipped_files} pictures, because they were read from cache"
+        PictureGenerator.reset_muber_of_skipped_files
+    end 
 end
 

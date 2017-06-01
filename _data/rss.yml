@@ -1,0 +1,12 @@
+title: "steilerPhoto" 
+description: "A photo blog of an ambitious, young computer scientist."
+
+feed-uri: "/feed.xml"
+
+generator:
+    uri: "https://github.com/steilerDev/steilerPhoto/blob/master/_files/feed.xml"
+    version: "1.0"
+    description: "Jekyll feed layout with data file, create by frank@steilerDev.de (Frank Steiler)"
+
+rights: "Copyright 2017 Frank Steiler, licensed under a Creative Commons BY-NC-SA 4.0"
+
