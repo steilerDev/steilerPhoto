@@ -35,7 +35,9 @@ paginate:
                 </div>
             </div>
         </div>
+        {% unless forloop.last %}
         <hr>
+        {% endunless %}
     {% endfor %}
 
     <!-- Pagination links -->
