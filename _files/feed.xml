@@ -63,6 +63,7 @@ layout: compress
                         <h2>{{ picture.title }}</h2>
                         <img src="{{ post_url }}{{picture.filename}}.jpg">
                     {% endfor %}
+                    <img src="{{ site.data.global.piwik.url }}/piwik.php?idsite={{ site.data.global.piwik.site-id }}&rec=1&url={{ post_url | cgi_escape }}" style="border:0;" alt="" />
                 {% endcapture %}
                 {{ content | strip | xml_escape }}
             </content>
