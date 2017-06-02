@@ -45,7 +45,21 @@ compress_html:
     blanklines: false
     profile: false
     startings: all
-#[html, head, body]
+
+# Purify CSS
+purify:
+    compress: true
+    force_class:
+        - 'social-button-reddit'
+        - 'social-button-email'
+        - 'hoverEffect'
+        - 'col-sm-8'
+        - 'desc-container'
+        - 'col-sm-4'
+        - 'img-container'
+
+# Remove unnecessary CSS and JS
+clean: true
 
 #
 # Deploy settings

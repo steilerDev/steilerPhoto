@@ -31,6 +31,7 @@ The photographies (placed in /_pictures/) have been removed from the repository 
 	* jpegoptim (>= 1.3.0)
     * libexif-dev
 * Additional Ruby gems managed through bundle
+* NPM and [PurifyCSS](https://github.com/purifycss/purifycss)
 
 ### Setup
 * `git clone` the repository

@@ -5,6 +5,8 @@
 # Build settings
 incremental: true
 
+purify: false
+
 compress_html:
     clippings: []
     comments: []
