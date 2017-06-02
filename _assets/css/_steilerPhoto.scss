@@ -211,18 +211,11 @@ body{
 
 .page-navigation {
   font-size: 120%;
-  display: block;
-  width: auto;
-  overflow: hidden;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
-.page-navigation a {
-  display: block;
-  width: 50%;
-  float: left;
-  margin: 1em 0;
-}
-
-.page-navigation .next {
-  text-align: right;
+a:hover .page-navigation {
+    text-decoration: underline;
+    color: #636363;
 }
