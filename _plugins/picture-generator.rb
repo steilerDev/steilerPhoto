@@ -156,7 +156,7 @@ end
 Jekyll::Hooks.register :posts, :post_write do |post|
     destination = File.join(post.site.dest, post.url)
 
-    Jekyll.logger.warn "Creating pictures for \"" << post.url << "\", this might take a while..."
+    Jekyll.logger.info "Creating pictures for \"" << post.url << "\", this might take a while..."
     PictureGenerator.iterate_associated_pictures(post) { |source, cache_base, base_filename, _|
 
         Jekyll.logger.debug "Creating pictures for \"" << source << "\", this might take a while..."

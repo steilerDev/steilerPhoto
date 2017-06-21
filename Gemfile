@@ -34,6 +34,11 @@ group :jekyll_plugins do
     gem "mini_magick"
     gem 'image_optimizer'
 
+    #
+    # Additional gems for compress
+    #
+    gem 'mime-types'
+
     gem 'jekyll-deploy'
 end
 

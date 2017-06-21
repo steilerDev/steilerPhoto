@@ -58,6 +58,23 @@ purify:
         - 'col-sm-4'
         - 'img-container'
 
+compress_files:
+    compressions: 
+        - 'gzip'
+        - 'brotli'
+    file_types:
+        - 'json'
+        - 'ttf'
+        - 'xml'
+        - 'woff'
+        - 'css'
+        - 'js'
+        - 'tff'
+        - 'eot'
+        - 'html'
+        - 'svg'
+    
+
 # Remove unnecessary CSS and JS
 clean: true
 

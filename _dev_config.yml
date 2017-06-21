@@ -6,6 +6,7 @@
 incremental: true
 
 purify: false
+compress_files: false
 
 compress_html:
     clippings: []
